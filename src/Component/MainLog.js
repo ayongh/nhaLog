@@ -15,7 +15,7 @@ export default class MainLog extends Component{
   
     componentDidMount() {
         let componentThis = this
-        axios.post('http://localhost:3001/log').then( async function (res)
+        axios.post('https://nhaserver.herokuapp.com/log').then( async function (res)
         {
             if(res.status ===200)
             {
