@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+table, tr {
+  border: 1px solid black;
+}
+.table_label
+{
+  background: #282c34;
+  color: white;
+}
+.timeStamp{
+  color: green
+}
+
+table
+{
+  width: 90vw;
+}
+
+td,th{
+  padding: 10px;
+}
+
+.logDetail
+{
+  padding: 5%;
+}
+
+.inneerContainer{
+  border-style: solid;
+  border-width: 1px;
+  border-color:#61affe;
+}
+
+.header{
+  display: flex;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color:#61affe;
+}
+
+.headerMethod,.headerRoute
+{
+  padding: 15px;
+  margin: 0;
+}
+
+.headerMethod{
+  background: #61affe;
+  color:white;
+}
+
+.inneerContainer
+{
+  background: floralwhite;
+}
+.description
+{
+  text-align: left;
+  margin-left: 10px;
+}
+
+.errorlevel, .message
+{
+  padding: 10px;
+}
+
+.errorlevel{
+  background: rgba(118, 228, 118, 0.603);
+  border-radius: .6rem;
+  font-size: larger;
+}
+
+
+.description_title
+{
+  display: inline-flex;
+  text-align: center;
+}
+
+.param
+{
+  padding: 5px;
+  background: white;
+  text-align: left;
+  padding-left: 2%;
+}
+
+.data
+{
+  display: flex;
+  margin-left: 20px;
+}
+
+.dataContent{
+  padding: 10px;
+}
+
+.reqDataHeader
+{
+  display: flex;
+  padding: 5%;
+}
+
+.content
+{
+  width: 10%;
+  text-align: left;
+}
+
+.reqheader_Json
+{
+  background: white;
+  border-radius: .5rem;
+  padding: 10px;
+}
+
+.reqheader_Json
+{
+  width: 100%;
+  height: 45vh;
+}
+
+.text
+{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: .5rem;
+  background: rgb(39, 38, 38);
+  color: white;
+  overflow: auto;
+}
