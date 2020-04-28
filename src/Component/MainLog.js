@@ -179,7 +179,7 @@ export default class MainLog extends Component{
             }
         }).catch(function(err)
         {
-            console.log(err)
+           return  <a>error occured</a>
         })
     }
 
