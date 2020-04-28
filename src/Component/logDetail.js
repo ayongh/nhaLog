@@ -23,6 +23,25 @@ export default class logDetail extends Component{
 
     }
 
+    getErrorLevel(errorLevel){
+
+        var errorLevelElement
+        if(errorLevel === "Info")
+        {
+            errorLevelElement = <p style={{background:"green", padding:"10px" , borderRadius:".2rem"}}>{errorLevel}</p>
+        }
+        else if(errorLevel === "Warning")
+        {
+            errorLevelElement = <p style={{background:"yellow",padding:"10px",borderRadius:".2rem"}}>{errorLevel}</p>
+        }
+        else if(errorLevel === "Error")
+        {
+            errorLevelElement = <p style={{background:"red",padding:"10px",borderRadius:".2rem"}}>{errorLevel}</p>
+        }
+
+        return errorLevelElement
+    }
+
     getDetailElement()
     {
         if(this.state.log !== null)
@@ -43,7 +62,7 @@ export default class logDetail extends Component{
                             <strong><p className="param_like">parameter</p></strong>
                         </div>
                         <div className="data">
-                            <p className="errorlevel">{this.state.log.errorLevel}</p>
+                            {this.getErrorLevel(this.state.log.errorLevel)}
                             <p className="dataContent"><strong>Execution Time:</strong> {this.state.log.executiontime}</p>
                             <p className="dataContent"><strong>Payload Size:</strong> {this.state.log.size}</p>
                         </div>
@@ -69,7 +88,6 @@ export default class logDetail extends Component{
             return <div className="nologDetail"> <p>There is no detail to display please go <a href="/">back</a> to select the log</p></div>
         }
     }
-
 
     render() {
         return (

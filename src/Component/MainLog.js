@@ -10,6 +10,7 @@ export default class MainLog extends Component{
       super(props);
       this.state = {
         logArray:null,
+        peginationElement:19
       };
     }
   
@@ -162,6 +163,41 @@ export default class MainLog extends Component{
         return errorLevelElement
     }
 
+    handleClick = () => {
+        let componentThis = this
+        var payload = {
+            datasize:componentThis.state.peginationElement * 2 
+        }
+        axios.post('https://nhaserver.herokuapp.com/log', payload).then( async function (res)
+        {
+            if(res.status ===200)
+            {
+                await componentThis.setState({
+                    logArray:res.data,
+                    peginationElement:(componentThis.state.peginationElement * 2 )-1
+                })
+            }
+        }).catch(function(err)
+        {
+            console.log(err)
+        })
+    }
+
+    getMoreElement()
+    {
+        var element
+
+        if( this.state.logArray !== null)
+        {
+            console.log(this.state.logArray.length)
+            if(this.state.peginationElement<this.state.logArray.length)
+            {
+                element = <a onClick={this.handleClick}>more</a>;
+            }
+        }
+        return element
+    }
+
 
     render() {
         
@@ -171,7 +207,6 @@ export default class MainLog extends Component{
                 <div className="log">
                     <table>
                         <tbody>
-
                             <tr className="table_label">
                                 <th>Time Stamp</th>
                                 <th>Error Level</th>
@@ -186,6 +221,7 @@ export default class MainLog extends Component{
                         </tbody>
                     </table>
                 </div>
+                {this.getMoreElement()}
             </header>
         </div>
       );

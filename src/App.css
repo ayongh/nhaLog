@@ -169,3 +169,8 @@ td,th{
   color: white;
   overflow: auto;
 }
+
+.App-header
+{
+  margin: 50px;
+}
